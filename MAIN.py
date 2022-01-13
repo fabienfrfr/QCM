@@ -6,26 +6,74 @@ Created on Wed Jan 12 19:10:06 2022
 """
 
 from bs4 import BeautifulSoup as bs
-import pandas as pd
+import pandas as pd, os
 #import requests
 
-file_name = "QCM_MATH.html"
+############ Initialization
+path = './HTML/'
+file_list = os.listdir(path)
 
-#### OPEN CORRECTLY FILE
-with open("QCM_MATH.html") as fp:
-    soup = bs(fp, 'html.parser')
+############ CONSTRUCT DATASET
+DF = []
+for f in file_list :
+    ## OPEN CORRECTLY FILE
+    with open(path+f) as fp:
+        soup = bs(fp, 'html.parser')
+    
+    ## TREE QUESTION
+    Q_LIST = []
+    for data in soup.find_all("table"):
+        CONTENT_LIST = []
+        i, R = 0, 0
+        for d in data.find_all("p") :
+            # response finding
+            if d.find('b') != None : R = i
+            content = d.get_text()
+            # clean and add data in list
+            CONTENT_LIST += [content.replace('\n', ' ').replace('\t', '')]
+            i+=1
+        # question list
+        Q_LIST += [CONTENT_LIST+[R]]
+    
+    # construct dataframe
+    df = pd.DataFrame(Q_LIST, columns =['QUESTION', 'A', 'B', 'C', 'D','S'])#, 'COMMENT', 'COEFF'])
+    DF += [df]
+## concatenate
+DF = pd.concat(DF, ignore_index=True)
+print(DF)
 
-## TREE QUESTION
-Q_LIST = []
-for data in soup.find_all("table"):
-    CONTENT_LIST = []
-    for d in data.find_all("p") :
-        content = d.get_text()
-        # clean and add data in list
-        CONTENT_LIST += [content.replace('\n', ' ').replace('\t', '')]
-    # question list
-    Q_LIST += [CONTENT_LIST]
-    print(CONTENT_LIST)
+############ SUPERVISED-LEARNING
+"""
+ideas : use basic models for learning questions for says probability of response (help button)
+bag of word, etc
+"""
 
-# construct dataframe
-df = pd.DataFrame(Q_LIST, columns =['QUESTION', 'A', 'B', 'C', 'D'])#, 'S', 'COMMENT', 'COEFF'])
+
+############ GAME-WEBPAGE
+"""
+basic django
+"""
+
+
+
+
+
+############ ANALYSIS DATA IN REAL TIME (link beetween question)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
