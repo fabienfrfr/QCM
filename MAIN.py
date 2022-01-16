@@ -10,7 +10,7 @@ import pandas as pd, os
 #import requests
 
 ############ Initialization
-path = './HTML/'
+path = './QCM_HTML/'
 file_list = os.listdir(path)
 
 ############ CONSTRUCT DATASET
@@ -33,10 +33,10 @@ for f in file_list :
             CONTENT_LIST += [content.replace('\n', ' ').replace('\t', '')]
             i+=1
         # question list
-        Q_LIST += [CONTENT_LIST+[R]]
+        Q_LIST += [[f.split('.')[0].split('_')[1]]+CONTENT_LIST+[R]]
     
     # construct dataframe
-    df = pd.DataFrame(Q_LIST, columns =['QUESTION', 'A', 'B', 'C', 'D','S'])#, 'COMMENT', 'COEFF'])
+    df = pd.DataFrame(Q_LIST, columns =['NAME','QUESTION', 'A', 'B', 'C', 'D','S'])#, 'COMMENT', 'COEFF'])
     DF += [df]
 ## concatenate
 DF = pd.concat(DF, ignore_index=True)
