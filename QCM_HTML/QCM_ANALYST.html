@@ -5,7 +5,7 @@
 	<title></title>
 	<meta name="generator" content="LibreOffice 6.4.7.2 (Linux)"/>
 	<meta name="created" content="2022-01-11T22:30:49.132131912"/>
-	<meta name="changed" content="2022-01-13T20:36:37.687865892"/>
+	<meta name="changed" content="2022-01-17T21:11:43.475813882"/>
 	<style type="text/css">
 		@page { size: 21cm 29.7cm; margin: 2cm }
 		p { margin-bottom: 0.25cm; background: transparent; line-height: 115%; background: transparent }
@@ -119,13 +119,13 @@
 	<col width="256*"/>
 
 	<tr>
-		<td width="100%" valign="top" style="border: 1px solid #000000; padding: 0.1cm"><p>
-			<span style="font-variant: normal"><span style="text-decoration: none"><font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal">Vous
+		<td width="100%" valign="top" style="border: 1px solid #000000; padding: 0.1cm"><p style="font-variant: normal; font-style: normal; font-weight: normal; text-decoration: none">
+			<font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt">Vous
 			travaillez pour un site Web qui aide à faire correspondre les
 			gens pour un déjeuner. Le site Web se vante d'utiliser plus de
 			500 prédicteurs (hyper-paramètres et sortie) pour trouver les
 			clients à la date idéale, mais de nombreux clients se plaignent
-			d'avoir très peu de correspondances.</span></span></font></font></span></span></p>
+			d'avoir très peu de correspondances.</font></font></p>
 		</td>
 	</tr>
 	<tr>
@@ -2402,6 +2402,59 @@
 			<ul><li><p style="font-variant: normal; font-style: normal; font-weight: normal; text-decoration: none">
 				<font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt">La
 				betweenness (intermédiarité)</font></font></p>
+			</ul>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="256*"/>
+
+	<tr>
+		<td width="100%" valign="top" style="border: 1px solid #000000; padding: 0.1cm"><p>
+			<span style="font-variant: normal"><span style="text-decoration: none"><font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal">Avec
+			django (python), quel est le principe de création d’une page
+			web, de la requête HTTP (input) à la réponse HTTP (output)&nbsp;?</span></span></font></font></span></span></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<ul><li><p><b><span style="font-variant: normal"><span style="text-decoration: none"><font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal">La
+				requête est envoyée à urls.py qui transmet la demande à la
+				vue python appropriée, cette vue charge les gabaries html-css et
+				interagie avec un modèle python pour lire et écrire des données
+				(sql) avant de répondre.</span></font></font></span></span></b></p>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<ul><li><p><span style="font-variant: normal"><span style="text-decoration: none"><font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal">La
+				requête est envoyée </span></span></font></font></span></span><span style="font-variant: normal"><span style="text-decoration: none"><font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal">à
+				index.html, le code python est interpreté par une balise de
+				scriptage javascript. Ce qui explique pourquoi c’est plus long
+				que le langage natif.</span></span></font></font></span></span></p>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<ul><li><p><span style="font-variant: normal"><span style="text-decoration: none"><font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal">La
+				requête </span></span></font></font></span></span><span style="font-variant: normal"><span style="text-decoration: none"><font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal">est
+				traitée par un fichier de redistribution qui sépare en 4
+				l’information (sql, html, css, javascript), puis recompilé
+				pour la réponse.</span></span></font></font></span></span></p>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<ul><li><p><span style="font-variant: normal"><span style="text-decoration: none"><font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal">La
+				requête est envoyée à </span></span></font></font></span></span><span style="font-variant: normal"><span style="text-decoration: none"><font face="Liberation Sans, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal">un
+				fichier index.html qui va charger les scripts python django, de
+				la même façon que javascript.</span></span></font></font></span></span></p>
 			</ul>
 		</td>
 	</tr>
